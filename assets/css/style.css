@@ -1,0 +1,480 @@
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar{   
+    position: fixed;
+    z-index: 999;
+    background-color: #BBDFFF;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.sidebar-element:not(#header){
+    position: relative;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.sidebar-element:not(#header):hover a{
+    color: #001E88;
+}
+
+.sidebar-element:not(#header):hover svg path{
+    fill: #001E88;
+}
+
+.sidebar-element svg{
+    margin-right: 10px;
+}
+
+.sidebar-element a{
+    color: black;
+    display: contents;
+}
+
+.icon{
+    padding-top: 20px;
+    width: 70px;
+}
+
+.sidebar-element:not(#header) svg{
+    width: 30px;
+    height: 30px;
+}
+
+#header{
+    background-color: white;
+    font-weight: 600;
+    font-size: 24px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar, .main{
+    left: 208.5px;
+    width: calc(100% - 170px);
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar.close ~ .navbar,
+.sidebar.close ~ .main {
+  left: 0;
+  width: 100%;
+}
+
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #006CB9;
+    top: 0;
+    height: 106.5px;
+    width: 100%;
+}
+
+.navbar-element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    font-weight: 400;
+    font-size: 28px;
+    color: white;
+}
+
+.navbar-element img{
+    height: 50px;
+    margin-right: 10px;
+}
+
+.main{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 106.5px;
+    height: 100%;
+    background: #EBEBEB;
+}
+
+/* Overview Page*/
+#overview{
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.topExpense{
+    padding-top: 20px;
+    margin: 30px 100px 25px 25px;
+}
+
+.cards{
+    background-color: white;
+    border-color: #DDD4D4;
+    box-shadow: inset 0px 4px 10px 0px rgb(0 0 0 / 15%);
+    border-radius: 34px;
+    height: max-content;
+    padding: 30px;
+}
+
+.expenseChart{
+    margin: 30px 80px 25px 80px;
+}
+
+#overview .list{
+    display: flex;
+    flex-direction: column;
+}
+
+#overview h2{
+    font-size: 26px;
+    font-weight: 400;
+}
+
+#overview .list p{
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#overview .list img{
+    height: 46px;
+}
+
+#overview .item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Expense Page */
+#view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    right: 0;
+    width: auto;
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+}
+
+.date{
+    background-color: white;
+    border-color: #DDD4D4;
+    box-shadow: inset 0px 4px 10px 0px rgb(0 0 0 / 15%);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    padding: 0 10px 0 10px;
+}
+
+.date img{
+    height: 66px;
+}
+
+.right{
+    padding-bottom: 11px;
+    transform: rotate(180deg);
+}
+
+.info{
+    background-color: white;
+    border-color: #DDD4D4;
+    box-shadow: inset 0px 4px 10px 0px rgb(0 0 0 / 15%);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: 70%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.info h1{
+    font-size: 24px;
+    font-weight: 300;
+    padding: 20px;
+}
+/* Line 1 */
+.line{
+    width: calc(100% + 36px);
+    margin: 0 -10px;
+    align-self: center;
+    border: 1px solid #E4D5D5;
+}
+
+.change-date{
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.change-date:hover{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: #ffffff00;
+}
+
+.expense-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+}
+
+.expense-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    padding: 10px;
+    width: 90%;
+    height: max-content;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.category{
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.expense-item img:not(.drop-three){
+    height: 48px;
+    margin-right: 10px;
+}
+
+.price-time{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.price-time p{
+    margin: 5px;
+    width: max-content;
+}
+
+.drop-three{
+    height: 47px;
+    transform: rotate(90deg);
+}
+
+.dropbtn{
+    border: none;
+    background-color: none;
+}
+
+.dropbtn:hover{
+    cursor: pointer;
+    background-color: none;
+}
+
+.dropdown-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.menu-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 14px;
+    background-color: white;
+}
+
+.show button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+}
+
+.show button:hover{
+    background-color: #e7e8ea;
+}
+
+/* Add Expenses Page */
+#add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+    right: 0;
+    width: auto;
+}
+
+.expense-form{
+    background-color: white;
+    border-color: #DDD4D4;
+    box-shadow: inset 0px 4px 10px 0px rgb(0 0 0 / 15%);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    width: 80%;
+    padding: 10px 40px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-content label{
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.form-field{
+    height: 30px;
+    width: 226px;
+    padding: 4px;
+    border: 1px solid #DCD9D9;
+    border-radius: 10px;
+}
+
+.category-image{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    border-radius: 100%;
+    margin-right: 10px;
+    display: flex;
+    background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.show-image{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.label-img{
+    height: 60px;
+    margin-right: 14px;
+}
+
+.date-img{
+    height: 45px;
+    padding: 10px;
+    margin-right: 14px;
+}
+
+.prefix{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    right: 30px;
+}
+
+.prefix p{
+    font-size: 16px;
+    font-weight: 300;
+    padding-right: 5px;
+}
+  
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea{
+    height: 100px;
+    width: 226px;
+    padding: 4px;
+    border: 1px solid #DCD9D9;
+    border-radius: 10px;
+}
+
+.expense-form button{
+    background-color: #00B5A5;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.expense-form button:hover{
+    background-color: #078f84;
+}
