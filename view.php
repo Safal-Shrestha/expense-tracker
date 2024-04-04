@@ -1,9 +1,6 @@
 <?php 
     $active_page = basename($_SERVER['PHP_SELF']);
     include("include/db.php");
-    $result=$conn->query("SELECT expenses.category_id as expense_id, expenses.id, expenses.title, expenses.amount, expenses.description, expenses.created_at, categories.label as category_label, categories.img as img_name
-    FROM expenses
-    JOIN categories ON expenses.category_id = categories.id;");
 ?>
 
 <!DOCTYPE html>
@@ -35,50 +32,7 @@
             <h1>Transactions: <?php echo $s_no;?></h1>
             <hr class="line">
             <div class="expense-list">
-                <?php
-                    $s_no=0;
-                    while($row = $result->fetch_assoc() and $s_no<$row){
-                        ++$s_no;
-                        $id = $row['id'];
-                        $name = $row['title'];
-                        $category = $row['category_label'];
-                        $amount = $row['amount'];
-                        $date = $row['created_at'];
-                        $desc = $row['description'];
-                        $img = $row['img_name'];
-                ?>
-                    <div class="expense-item">
-                        <div class="item item-left">
-                            <img src="assets/img/<?php echo $img;?>">
-                            <div class="item-details">
-                                <p class="category"><?php echo $category;?></p>
-                                <p class="name"><?php echo $name;?></p>
-                            </div>
-                        </div>
-                        <div class="item item-right">
-                            <div class="price-time">
-                                <p>Rs. <?php echo $amount;?></p>
-                                <p><?php echo $date;?></p>
-                            </div>
-                            <div class="menu-dropdown">
-                                <button onclick="openMenu(<?php echo $id;?>)" class="dropbtn">
-                                    <img src="assets/img/three_dot.png" class="drop-three">
-                                </button>
-                                <div class="menu-content" id="<?php echo $id;?>">
-                                    <button>
-                                        <p>Duplicate Transaction</p>
-                                    </button>
-                                    <button>
-                                        <p>Edit Transaction</p>
-                                    </button>
-                                    <button>
-                                        <p>Delete Transaction</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php }?>
+
             </div>
         </div>
     </div>
