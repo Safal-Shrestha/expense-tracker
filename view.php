@@ -1,7 +1,6 @@
 <?php 
     $active_page = basename($_SERVER['PHP_SELF']);
     include("include/db.php");
-    include("include/process_data.php");
     $result=$conn->query("SELECT expenses.category_id as expense_id, expenses.id, expenses.title, expenses.amount, expenses.description, expenses.created_at, categories.label as category_label, categories.img as img_name
     FROM expenses
     JOIN categories ON expenses.category_id = categories.id;");
@@ -37,7 +36,6 @@
             <hr class="line">
             <div class="expense-list">
                 <?php
-                    echo $cookieData;
                     $s_no=0;
                     while($row = $result->fetch_assoc() and $s_no<$row){
                         ++$s_no;
