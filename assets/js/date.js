@@ -21,6 +21,21 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 
+  function updateTransactionNo(month, year) {
+    $.ajax({
+        url: '../expense/include/transactionNo.php',
+        method: 'GET',
+        data: { month: month, year: year },
+        success: function(response) {
+            $('.transaction-count').html(response); // Update the content of expense list
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            // Handle error here
+        }
+    });
+}
+
   // Get current date
   let currentDate = new Date();
   let currentYear = currentDate.getFullYear();
@@ -32,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Update expense list for the current month
   updateExpenseList(currentMonth, currentYear);
 
+  //Update transaction number
+  updateTransactionNo(currentMonth, currentYear);
+
   // Handle button clicks
   document.getElementById("prevMonth").addEventListener("click", function() {
       currentMonth--;
@@ -41,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       displayDate(currentYear, currentMonth);
       updateExpenseList(currentMonth, currentYear);
+      updateTransactionNo(currentMonth, currentYear);
   });
 
   document.getElementById("nextMonth").addEventListener("click", function() {
@@ -51,5 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       displayDate(currentYear, currentMonth);
       updateExpenseList(currentMonth, currentYear);
+      updateTransactionNo(currentMonth, currentYear);
   });
 });

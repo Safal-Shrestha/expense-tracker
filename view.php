@@ -29,7 +29,7 @@
             </button>
         </div>
         <div class="info">
-            <h1>Transactions: <?php echo $s_no;?></h1>
+            <h1 id="transaction-count" class="transaction-count"></h1>
             <hr class="line">
             <div class="expense-list">
 

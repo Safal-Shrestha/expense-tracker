@@ -19,7 +19,9 @@
     if ($result->num_rows === 0) {
         echo "<p class='error'>No record</p>";
     }
+    $s_no=0;
     while($row = $result->fetch_assoc()){
+        $s_no++;
         $id = $row['id'];
         $name = $row['title'];
         $category = $row['category_label'];
@@ -60,4 +62,8 @@
             </div>
         </div>
     </div>
-<?php }?>
+<?php 
+    }
+    // $num_transactions = $s_no;
+    // json_encode(array("html" => ob_get_clean(), "num_transactions" => $num_transactions));
+?>
