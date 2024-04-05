@@ -19,9 +19,7 @@
     if ($result->num_rows === 0) {
         echo "<p class='error'>No record</p>";
     }
-    $s_no=0;
     while($row = $result->fetch_assoc()){
-        $s_no++;
         $id = $row['id'];
         $name = $row['title'];
         $category = $row['category_label'];
