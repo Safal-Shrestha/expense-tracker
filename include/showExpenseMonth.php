@@ -47,13 +47,13 @@
                     <img src="assets/img/three_dot.png" class="drop-three">
                 </button>
                 <div class="menu-content" id="<?php echo $id;?>">
-                    <button>
+                    <button onclick="duplicateTransaction(<?php echo $id;?>)">
                         <p>Duplicate Transaction</p>
                     </button>
-                    <button>
+                    <button onclick="editTransaction(<?php echo $id;?>)">
                         <p>Edit Transaction</p>
                     </button>
-                    <button>
+                    <button onclick="deleteTransaction(<?php echo $id;?>)">
                         <p>Delete Transaction</p>
                     </button>
                 </div>
@@ -62,6 +62,4 @@
     </div>
 <?php 
     }
-    // $num_transactions = $s_no;
-    // json_encode(array("html" => ob_get_clean(), "num_transactions" => $num_transactions));
 ?>

@@ -38,5 +38,6 @@
     </div>
     <script src="assets/js/date.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/buttonClick.js"></script>
 </body>
 </html>
