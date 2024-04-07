@@ -50,7 +50,7 @@
                     <button onclick="duplicateTransaction(<?php echo $id;?>)">
                         <p>Duplicate Transaction</p>
                     </button>
-                    <button onclick="editTransaction(<?php echo $id;?>)">
+                    <button onclick="loadOverlayContent(<?php echo $id;?>)">
                         <p>Edit Transaction</p>
                     </button>
                     <button onclick="deleteTransaction(<?php echo $id;?>)">

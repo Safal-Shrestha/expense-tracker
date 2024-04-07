@@ -40,13 +40,6 @@ function updateTransactionNo(month, year) {
         }
     });
 }
-
-//Function to save selected month and date
-function saveDate(year, month) {
-    const dateObj = { year: year, month: month };
-    localStorage.setItem('currentDate', JSON.stringify(dateObj));
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     // Display current date
     displayDate(currentYear, currentMonth);
@@ -57,8 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
     //Update transaction number
     updateTransactionNo(currentMonth, currentYear);
 
-    saveDate(currentYear, currentMonth);
-
     // Handle button clicks
     document.getElementById("prevMonth").addEventListener("click", function() {
         currentMonth--;
@@ -66,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
             currentMonth = 12;
             currentYear--;
         }
-        saveDate(currentYear, currentMonth);
         displayDate(currentYear, currentMonth);
         updateExpenseList(currentMonth, currentYear);
         updateTransactionNo(currentMonth, currentYear);
@@ -78,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
             currentMonth = 1;
             currentYear++;
         }
-        saveDate(currentYear, currentMonth);
         displayDate(currentYear, currentMonth);
         updateExpenseList(currentMonth, currentYear);
         updateTransactionNo(currentMonth, currentYear);

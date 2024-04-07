@@ -36,8 +36,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Overlay container -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <div id="overlayContent"></div>
+        </div>
+    </div>
+    
     <script src="assets/js/date.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/buttonClick.js"></script>
+    <script src="assets/js/editOverlay.js"></script>
 </body>
 </html>
