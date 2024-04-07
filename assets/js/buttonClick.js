@@ -10,11 +10,46 @@ function readDate(){
 }
 
 function duplicateTransaction(id){
+    const storedDate = readDate();
+
+    let selectedYear = storedDate.year;
+    let selectedMonth = storedDate.month;
+
+    $.ajax({
+        url: '../expense/include/duplicateExpense.php',
+        method: 'GET',
+        data: { id: id},
+        success: function(response) {
+            updateExpenseList(currentMonth, currentYear);
+            updateTransactionNo(currentMonth, currentYear);
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            // Handle error here
+        }
+    });
     
 }
 
 function editTransaction(id){
+    const storedDate = readDate();
 
+    let selectedYear = storedDate.year;
+    let selectedMonth = storedDate.month;
+
+    $.ajax({
+        url: '../expense/include/editExpense.php',
+        method: 'GET',
+        data: { id: id},
+        success: function(response) {
+            updateExpenseList(currentMonth, currentYear);
+            updateTransactionNo(currentMonth, currentYear);
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            // Handle error here
+        }
+    });
 }
 
 function deleteTransaction(id){
