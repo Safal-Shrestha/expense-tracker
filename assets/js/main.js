@@ -17,3 +17,22 @@ function openMenu(dropdownId) {
     dropdownMenu.classList.toggle("show");
     activeDropdown = dropdownMenu;
 }
+
+//Top Expense
+function topExpense(){
+    $.ajax({
+        url: '../expense/include/topExpense.php',
+        method: 'GET',
+        success: function(response) {
+            $('.list').html(response); // Update the content of expense list
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            // Handle error here
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    topExpense();
+});

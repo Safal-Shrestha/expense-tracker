@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <?php include 'sidebar.html'; ?>
@@ -20,18 +20,7 @@
         <div class="cards topExpense">
             <h2>Top Expense</h2>
             <div class="list">
-                <div class="item">
-                    <img src="assets/img/fng.png">
-                    <p>Food and Groceries</p>
-                </div>
-                <div class="item">
-                    <img src="assets/img/education.png">
-                    <p>Education</p>
-                </div>
-                <div class="item">
-                    <img src="assets/img/tp.png">
-                    <p>Transportation</p>
-                </div>
+                
             </div>
         </div>
         <div class="cards expenseChart">
