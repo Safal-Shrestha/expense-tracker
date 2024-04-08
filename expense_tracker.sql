@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 11:26 PM
+-- Generation Time: Apr 08, 2024 at 05:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `expense_tracker`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
-  `label` varchar(255) NOT NULL,
-  `img` varchar(125) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `label`, `img`, `created_at`, `updated_at`) VALUES
-(1010, 'Food & Groceries', 'fng.png', '2024-03-31 07:29:00', '2024-03-31 07:29:18'),
-(1011, 'Transportation', 'tp.png', '2024-03-31 07:29:34', '2024-03-31 07:29:47'),
-(1012, 'Housing & Utilities', 'hnm.png', '2024-03-31 07:29:51', '2024-03-31 07:29:54'),
-(1013, 'Entertainment & Leisure', 'entertainment.png', '2024-03-31 07:29:59', '2024-03-31 07:30:04'),
-(1014, 'Education', 'education.png', '2024-03-31 07:30:07', '2024-03-31 07:30:10'),
-(1015, 'Health & Wellness', 'health.png', '2024-03-31 07:30:14', '2024-03-31 07:30:17');
 
 -- --------------------------------------------------------
 
@@ -68,19 +42,15 @@ CREATE TABLE `expenses` (
 --
 
 INSERT INTO `expenses` (`id`, `title`, `amount`, `description`, `created_at`, `updated_at`, `category_id`) VALUES
-(1, 'Mo:Mo', 120, 'Test', '2024-03-20 17:23:00', '2024-03-31 17:23:08', 1010),
-(2, 'Petrol', 1000, 'adfa', '2024-03-23 17:23:00', '2024-03-31 17:23:24', 1011),
-(4, 'Nails', 100, 'Test product for another year', '2023-01-03 15:18:00', '2024-04-03 15:21:11', 1012);
+(39, 'Mo:Mo', 500, 'Mo:Mo', '2024-03-07 07:45:00', '2024-04-08 02:12:51', 1010),
+(53, 'Medicines', 345, 'Medicine for headache', '2024-03-09 09:23:00', '2024-04-08 02:12:29', 1015),
+(57, 'Sample', 343, 'asgddasfsdfa', '2024-02-16 09:27:01', '2024-04-07 14:01:39', 1011),
+(60, 'Petrol', 1000, 'Petrol Bought', '2024-04-08 13:19:37', '2024-04-08 02:13:02', 1011),
+(62, 'Sandpaper', 300, 'Bought Sandpapers for wood project', '2024-04-08 02:11:08', '2024-04-08 02:12:05', 1012);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `expenses`
@@ -94,16 +64,10 @@ ALTER TABLE `expenses`
 --
 
 --
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1016;
-
---
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Constraints for dumped tables
