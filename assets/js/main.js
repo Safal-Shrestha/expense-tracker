@@ -24,7 +24,7 @@ function topExpense(){
         url: '../expense/include/topExpense.php',
         method: 'GET',
         success: function(response) {
-            $('.list').html(response); // Update the content of expense list
+            $('.list').html(response);
         },
         error: function(xhr, status, error) {
             console.error(xhr.responseText);
